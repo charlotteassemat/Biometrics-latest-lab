@@ -20,6 +20,4 @@ i1s = i1s(:)';
 hash = i1s;
 %Get the 64-bit integer associated to this array
 %hash = sum(i1s.*2.^(numel(i1s)-1:-1:0));
-
-
 end
