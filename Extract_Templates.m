@@ -26,7 +26,6 @@ for i=1:size(video_names,2)
     
     [sts,number_masks] = system('ls -1 | wc -l');
     number_masks_test = str2num(number_masks);
-    number_masks_test
     eval(dir);
     
     %for j=3:size(number_masks,1) %The representation of number_masks has changed   

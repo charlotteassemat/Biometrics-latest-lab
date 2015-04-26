@@ -23,7 +23,7 @@ number_masks = str2num(number_masks);
 eval (dir);
 ratio_values=[];
 
- hash_matrix = zeros(64,number_masks*5);
+hash_matrix = zeros(64,number_masks*5);
  
  %HASH MATRIX
 for j=1:number_masks
