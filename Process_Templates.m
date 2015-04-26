@@ -23,7 +23,7 @@ number_masks = str2num(number_masks);
 eval (dir);
 ratio_values=[];
 
-hash_matrix = zeros(64,number_masks*5);
+hash_matrix = zeros(64,number_masks*2);
  
  %HASH MATRIX
 for j=1:number_masks
@@ -31,16 +31,15 @@ for j=1:number_masks
     mask=imread(name_mask);
     
     halfV = floor(size(mask,1)/2);
-    halfH = floor(size(mask,2)/2);
+    %halfH = floor(size(mask,2)/2);
     hash_matrix(:,j) = HashPic(mask);
     hash_matrix(:,j+1) = HashPic(mask(1:halfV,:));
-    hash_matrix(:,j+2) = HashPic(mask(halfV:end,:));
-    hash_matrix(:,j+3) = HashPic(mask(:,1:halfH));
-    hash_matrix(:,j+4) = HashPic(mask(:,halfH:end));    
+    %hash_matrix(:,j+2) = HashPic(mask(:,1:halfH));
 end
- 
+number_masks = number_masks*2; 
 index=1:number_masks-2;         
 chosen_templates=index(1:1:size(index,2));    
+
  %    number_masks;
  for k=1:number_masks-1
      for l=k+1:number_masks-1
@@ -50,26 +49,27 @@ chosen_templates=index(1:1:size(index,2));
          %their hashes.
          if pdist(X,'hamming')*length(X) <=6
                 chosen_templates(1,l) = 0;
-
          end
-
      end
  end    
 
 %removing all the 0
 chosen_templates(chosen_templates == 0) = [];
-      
 num_templates=0;
 for n=1:size(chosen_templates,2)
-    name_mask=sprintf('%s/template%.4d.png',templates_directory,chosen_templates(n));
+    number = floor(chosen_templates(n)/5)+1;
+    m = mod(chosen_templates(n),5);
+    name_mask=sprintf('%s/template%.4d.png',templates_directory,number);
     mask=imread(name_mask);
     
+    if(m==1)
+            mask = mask(1:halfV,:);
+    end
     num_templates=num_templates+1;
     template_name=sprintf('%s/template%.4d.png',final_templates_directory,num_templates);
     imwrite(mask,template_name)
-    
+
     num_templates=num_templates+1;
     template_name=sprintf('%s/template%.4d.png',final_templates_directory,num_templates);
     imwrite(fliplr(mask),template_name)
-    
 end    

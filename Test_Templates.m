@@ -18,8 +18,6 @@ number_templates = str2num(number_t);
 
 eval (dir);
 confidence_table(1,:) = [-1,-1,-1,-1,-1,-1]; % -1 is only for initialization purposes.
-display('number of templates: ')
-number_templates
 
 for i=1:size(video_names,2)    
     dir=sprintf('cd ''%s''',pwd);

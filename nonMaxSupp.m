@@ -6,7 +6,6 @@ function max_blobs = nonMaxSupp(blobs, overlap)
 display('entering non max supp')
     num_images = size(blobs,2);
     for i=1:num_images
-        i
         if isempty(blobs)
             display('no blob found');
             max_blobs{i} = [];
