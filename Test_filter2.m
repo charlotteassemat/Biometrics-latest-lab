@@ -1,5 +1,4 @@
 close all
-%clear all
 clc
 
 %read a new frame for a new video input

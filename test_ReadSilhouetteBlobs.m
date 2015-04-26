@@ -1,6 +1,4 @@
-%clear all
 close all
-%clc
 
 video_dir='./Videos';
 thr=0.1;
@@ -8,8 +6,6 @@ threshold=0.55;
 overlap = 0.1;
 
 video_dir='./Videos';
-%video_names={'Sequence2'};
-size(video_names,2)
 for i=1:size(video_names,2)
     filename_Silhouette=sprintf('%s/%s/%s_Silhouette_%.2f.idl',video_dir,video_names{i},video_names{i},thr);
     video_list=sprintf('%s/%s/images/%slist.txt',video_dir,video_names{i},video_names{i});

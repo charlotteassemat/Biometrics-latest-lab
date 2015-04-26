@@ -23,7 +23,4 @@ for i=1:blob.w
         end
     end
 end
-%%paint center
-center_x=floor(blob.x+blob.w/2);
-center_y=floor(blob.y+blob.h/2);
-% imagen(center_y,center_x,:)=color;
+end

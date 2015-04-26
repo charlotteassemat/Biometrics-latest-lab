@@ -15,5 +15,4 @@ end
 if(size(final_blobs,1)==0)
     fprintf(fid,'"%s";\n',image_name);
 end
-%final_blobs
 fclose(fid);

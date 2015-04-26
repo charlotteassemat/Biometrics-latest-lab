@@ -3,12 +3,9 @@ function max_blobs = nonMaxSupp(blobs, overlap)
 % Non-maximum suppression.
 % Greedily select high-scoring detections and skip detections
 % that are significantly covered by a previously selected detection.
-display('entering non max supp')
     num_images = size(blobs,2);
     for i=1:num_images
-        i
         if isempty(blobs)
-            display('no blob found');
             max_blobs{i} = [];
         else
             max_blobs{i} = nonMaxSupp_frame(blobs{i},overlap);
@@ -18,7 +15,7 @@ end
 
 function blobs = nonMaxSupp_frame(blobs,overlap)
   if isempty(blobs)
-      display('warning: not blob found')
+      display('warning: no blob found in this frame in non max supp')
   else
       x1 = [blobs(:).x];
       y1 = [blobs(:).y];
@@ -47,15 +44,8 @@ function blobs = nonMaxSupp_frame(blobs,overlap)
             o2 = w * h / area(i);
             if o1 > overlap || o2 > overlap%comp
               suppress = [suppress; pos];
-            else
-            o1
-            o2
             end
           else
-              display('no overlap between blobs')
-              [xx1 yy1 xx2 yy2]
-              [x1(i) y1(i) x2(i) y2(i)]
-              [x1(j) y1(j) x2(j) y2(j)]
           end
         end
         I(suppress) = [];

@@ -1,16 +1,11 @@
-%clear all
 close all
-%clc
 threshold=0.1;
 video_dir='./Videos';
-%video_names={'Sequence2'};
 
 for i=1:size(video_names,2)
     video_list=sprintf('%s/%s/images/%slist.txt',video_dir,video_names{i},video_names{i});
     fid=fopen(video_list,'r');
- %   display(video_list)
     num_images=0;
- %   fid
     cadena=fgets(fid);
     images_names={};
     while(size(cadena,2)>4)
@@ -27,6 +22,3 @@ for i=1:size(video_names,2)
     fclose(fid);    
     Silhouette_detector(images_names,threshold,video_names{i},video_dir);  
 end
-
-
-
