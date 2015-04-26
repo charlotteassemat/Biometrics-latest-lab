@@ -1,5 +1,4 @@
 function max_blobs = nonMaxSupp(blobs, overlap)
-% pick = nms(boxes, overlap) 
 % Non-maximum suppression.
 % Greedily select high-scoring detections and skip detections
 % that are significantly covered by a previously selected detection.
