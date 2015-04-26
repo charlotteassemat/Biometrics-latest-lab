@@ -6,6 +6,7 @@ function max_blobs = nonMaxSupp(blobs, overlap)
 display('entering non max supp')
     num_images = size(blobs,2);
     for i=1:num_images
+        i
         if isempty(blobs)
             display('no blob found');
             max_blobs{i} = [];
@@ -19,10 +20,10 @@ function blobs = nonMaxSupp_frame(blobs,overlap)
   if isempty(blobs)
       display('warning: not blob found')
   else
-    x1 = [blobs(:).x];
+      x1 = [blobs(:).x];
       y1 = [blobs(:).y];
-      x2 = x1 + [blobs(:).h];
-      y2 = y1 + [blobs(:).w];
+      x2 = x1 + [blobs(:).w];
+      y2 = y1 + [blobs(:).h];
       s = [blobs(:).score];
       area = (x2-x1+1) .* (y2-y1+1);
       [~, I] = sort(s);
@@ -47,10 +48,14 @@ function blobs = nonMaxSupp_frame(blobs,overlap)
             if o1 > overlap || o2 > overlap%comp
               suppress = [suppress; pos];
             else
-              display('not suppressed computed overlap')
-              o1
-              o2
+            o1
+            o2
             end
+          else
+              display('no overlap between blobs')
+              [xx1 yy1 xx2 yy2]
+              [x1(i) y1(i) x2(i) y2(i)]
+              [x1(j) y1(j) x2(j) y2(j)]
           end
         end
         I(suppress) = [];

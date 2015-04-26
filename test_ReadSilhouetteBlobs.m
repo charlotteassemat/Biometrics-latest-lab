@@ -4,8 +4,8 @@ close all
 
 video_dir='./Videos';
 thr=0.1;
-threshold=0.7;
-overlap = 0.10;
+threshold=0.55;
+overlap = 0.1;
 
 video_dir='./Videos';
 %video_names={'Sequence2'};
@@ -32,8 +32,9 @@ for i=1:size(video_names,2)
         if(size(Blobs,2)>=frame)
             imagen=PaintBlobs(Blobs{frame},imagen,[0 255 0]);
         end
+        figure(i)
         imshow(imagen)
-        waitforbuttonpress;
+%        waitforbuttonpress;
         cadena=sprintf('%s/%s/images/frame%.4d_out.png',video_dir,video_names{i},frame); 
         imwrite(imagen,cadena);
         pause(0.01);
