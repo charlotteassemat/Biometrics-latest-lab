@@ -23,7 +23,7 @@ function [xmax,imax,xmin,imin] = extrema(x)
 %   See also EXTREMA2, MAX, MIN
 
 %   Written by
-%   Lic. on Physics Carlos Adrián Vargas Aguilera
+%   Lic. on Physics Carlos Adriï¿½n Vargas Aguilera
 %   Physical Oceanography MS candidate
 %   UNIVERSIDAD DE GUADALAJARA 
 %   Mexico, 2004
@@ -143,4 +143,4 @@ imax = imax(inmax);
 imin = imin(inmin);
 
 
-% Carlos Adrián Vargas Aguilera. nubeobscura@hotmail.com
+% Carlos Adriï¿½n Vargas Aguilera. nubeobscura@hotmail.com

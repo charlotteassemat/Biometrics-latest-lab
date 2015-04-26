@@ -44,7 +44,7 @@ function [xymax,smax,xymin,smin] = extrema2(xy,varargin)
 %   See also EXTREMA, MAX, MIN
 
 %   Written by
-%   Lic. on Physics Carlos Adrián Vargas Aguilera
+%   Lic. on Physics Carlos Adriï¿½n Vargas Aguilera
 %   Physical Oceanography MS candidate
 %   UNIVERSIDAD DE GUADALAJARA 
 %   Mexico, 2005
@@ -171,4 +171,4 @@ i = (I - (J+i0-j0)).*si + J+i0-j0;
 j = (I+j0-i0-(J)).*si + J;
 
 
-% Carlos Adrián Vargas Aguilera. nubeobscura@hotmail.com
+% Carlos Adriï¿½n Vargas Aguilera. nubeobscura@hotmail.com
